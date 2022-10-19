@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import useUnmount from "./hooks/useUnmount";
 import useUnmountedRef from './hooks/useUnmountedRef'
+import SetStateDemo from "./hooks/useSetState/demo";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <button onClick={() => setShow(!show)}>hidden</button>
       {show ? <Child/> : null}
+      <SetStateDemo />
     </div>
   )
 }
