@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import useUnmount from "./hooks/useUnmount";
 import useUnmountedRef from './hooks/useUnmountedRef'
 import SetStateDemo from "./hooks/useSetState/demo";
+import ToggleDemo from './hooks/useToggle/demo'
+import ToggleDemo2 from './hooks/useToggle/demo2'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -10,6 +12,8 @@ function App() {
       <button onClick={() => setShow(!show)}>hidden</button>
       {show ? <Child/> : null}
       <SetStateDemo />
+      <ToggleDemo />
+      <ToggleDemo2 />
     </div>
   )
 }
