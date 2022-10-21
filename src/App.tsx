@@ -4,6 +4,7 @@ import useUnmountedRef from './hooks/useUnmountedRef'
 import SetStateDemo from "./hooks/useSetState/demo";
 import ToggleDemo from './hooks/useToggle/demo'
 import ToggleDemo2 from './hooks/useToggle/demo2'
+import MemoizedFnDemo from './hooks/useMemoizedFn/demo'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -14,6 +15,7 @@ function App() {
       <SetStateDemo />
       <ToggleDemo />
       <ToggleDemo2 />
+      <MemoizedFnDemo />
     </div>
   )
 }
