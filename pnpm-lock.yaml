@@ -3,10 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   '@testing-library/react': ^13.4.0
   '@testing-library/react-hooks': ^8.0.1
+  '@types/js-cookie': ^3.0.2
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
   '@vitejs/plugin-react': ^2.1.0
   '@vitest/coverage-c8': ^0.24.3
+  js-cookie: ^3.0.1
   jsdom: ^20.0.1
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -15,6 +17,8 @@ specifiers:
   vitest: ^0.24.3
 
 dependencies:
+  '@types/js-cookie': 3.0.2
+  js-cookie: 3.0.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -444,6 +448,10 @@ packages:
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
     dev: true
+
+  /@types/js-cookie/3.0.2:
+    resolution: {integrity: sha512-6+0ekgfusHftJNYpihfkMu8BWdeHs9EOJuGcSofErjstGPfPGEu9yTu4t460lTzzAMl2cM5zngQJqPMHbbnvYA==}
+    dev: false
 
   /@types/node/18.11.0:
     resolution: {integrity: sha512-IOXCvVRToe7e0ny7HpT/X9Rb2RYtElG1a+VshjwT00HxrM2dWBApHQoqsI6WiY7Q03vdf2bCrIGzVrkF/5t10w==}
@@ -1222,6 +1230,11 @@ packages:
       html-escaper: 2.0.2
       istanbul-lib-report: 3.0.0
     dev: true
+
+  /js-cookie/3.0.1:
+    resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
+    engines: {node: '>=12'}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

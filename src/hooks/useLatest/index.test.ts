@@ -1,5 +1,5 @@
-import { describe, expect, it} from "vitest";
-import { renderHook} from "@testing-library/react-hooks";
+import {describe, expect, it} from "vitest";
+import {renderHook} from "@testing-library/react-hooks";
 import useLatest from "./index";
 
 const setUp = (val: any) => renderHook((state) => useLatest(state), {initialProps: val})
