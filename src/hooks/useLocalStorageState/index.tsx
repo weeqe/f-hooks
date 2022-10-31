@@ -1,25 +1,15 @@
-import { useMemo, useState } from "react";
-import { isFunction, isUndef } from "../utils";
+import {useState} from "react";
+import {isFunction, isUndef} from "../utils";
 import useMemoizedFn from "../useMemoizedFn";
 
 
-interface Options<T> {
+export interface Options<T> {
   defaultValue?: T | (() => T)
   serializer?: (value: T) => string
   deserializer?: (value: string) => T
 }
-function useLocalStorageState<T>(key: string, options?: Options<T>) {
-  const [state, setState] = useState<T>(() => {
-    const raw = localStorage.getItem(key)
-    if (raw) {
-      return deserializer(raw)
-    }
-    if (isFunction(options?.defaultValue)) {
-      return options?.defaultValue()
-    }
-    return options?.defaultValue
-  });
 
+function useLocalStorageState<T>(key: string, options?: Options<T>) {
   const serializer = (value: T) => {
     if (options?.serializer) {
       return options.serializer(value)
@@ -33,6 +23,22 @@ function useLocalStorageState<T>(key: string, options?: Options<T>) {
     }
     return JSON.parse(value)
   }
+
+  const [state, setState] = useState<T>(() => {
+    try {
+      const raw = localStorage.getItem(key)
+      if (raw) {
+        return deserializer(raw)
+      }
+    } catch (e) {
+      console.error(e)
+    }
+    if (isFunction(options?.defaultValue)) {
+      return options?.defaultValue()
+    }
+    return options?.defaultValue
+  });
+
 
   const updateState = useMemoizedFn((value: T | ((prevState: T) => T)) => {
     const currentState = isFunction(value) ? value(state) : value
@@ -49,7 +55,7 @@ function useLocalStorageState<T>(key: string, options?: Options<T>) {
     }
   })
 
-  return [state, updateState]
+  return [state, updateState] as const
 }
 
 export default useLocalStorageState

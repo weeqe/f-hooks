@@ -5,6 +5,7 @@ import SetStateDemo from "./hooks/useSetState/demo";
 import ToggleDemo from './hooks/useToggle/demo'
 import ToggleDemo2 from './hooks/useToggle/demo2'
 import MemoizedFnDemo from './hooks/useMemoizedFn/demo'
+import LocalStorageDemo from './hooks/useLocalStorageState/demo'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -16,6 +17,7 @@ function App() {
       <ToggleDemo />
       <ToggleDemo2 />
       <MemoizedFnDemo />
+      <LocalStorageDemo />
     </div>
   )
 }
