@@ -1,7 +1,6 @@
 import {useEffect, useRef} from "react";
 
-
-type ShouldUpdateFn<T> = (prev: T | undefined, next:  T) => boolean
+export type ShouldUpdateFn<T> = (prev: T | undefined, next:  T) => boolean
 
 const defaultShouldUpdate = <T>(a?: T, b?:T) => !Object.is(a, b)
 
