@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import useUnmount from "./hooks/useUnmount";
 import useUnmountedRef from './hooks/useUnmountedRef'
 import SetStateDemo from "./hooks/useSetState/demo";
@@ -7,19 +8,26 @@ import ToggleDemo2 from './hooks/useToggle/demo2'
 import MemoizedFnDemo from './hooks/useMemoizedFn/demo'
 import LocalStorageDemo from './hooks/useLocalStorageState/demo'
 import ThrottleDemo from './hooks/useThrottle/demo'
+import UrlStateDemo from './hooks/useUrlState/demo'
 
 function App() {
     const [show, setShow] = useState(true);
     return (
         <div className="App">
-            <button onClick={() => setShow(!show)}>hidden</button>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<UrlStateDemo />}></Route>
+                </Routes>
+            </BrowserRouter>
+
+            {/* <button onClick={() => setShow(!show)}>hidden</button>
             {show ? <Child/> : null}
             <SetStateDemo/>
             <ToggleDemo/>
             <ToggleDemo2/>
             <MemoizedFnDemo/>
             <LocalStorageDemo/>
-            <ThrottleDemo/>
+            <ThrottleDemo/> */}
         </div>
     )
 }
